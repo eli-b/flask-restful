@@ -189,10 +189,10 @@ class Argument(object):
                     if self.choices and value not in self.choices:
                         if current_app.config.get("BUNDLE_ERRORS", False) or bundle_errors:
                             return self.handle_validation_error(
-                                ValueError(u"{0} is not a valid choice".format(
+                                ValueError(u"{0!r} is not a valid choice".format(
                                     value)), bundle_errors)
                         self.handle_validation_error(
-                                ValueError(u"{0} is not a valid choice".format(
+                                ValueError(u"{0!r} is not a valid choice".format(
                                     value)), bundle_errors)
 
                     if name in request.unparsed_arguments:
